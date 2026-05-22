@@ -8,14 +8,14 @@
 
 namespace game {
     Objects::Objects(const char* asset): image(LoadTexture(asset)),
-    speed(1),
+    speed(2),
     direction (GetRandomValue(-1, 1)),
-    position({(float)GetRandomValue(image.width, 1200 - image.width), 800}){
+    position({(float)GetRandomValue(0, 1200), 800}){
         std::cout << direction;
     }
 
     void Objects::Draw() {
-        DrawTexture(image, position.x, position.y, WHITE);
+        DrawTextureEx(image, position, 0, 0.2, WHITE);
 
     }
 

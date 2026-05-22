@@ -6,18 +6,19 @@
 
 namespace game {
     Birds::Birds(const char* asset): image(LoadTexture(asset)),
-    speed(1),
-    position({300,(float)GetRandomValue(image.height, 1200 - image.height)}) {
+    speed(3),
+    position({0,(float)GetRandomValue(image.height, 1200 - image.height)}) {
 
     }
 
     void Birds::Draw() {
-        DrawTexture(image, position.x, position.y, WHITE);
+        DrawTextureEx(image, position, 0, 0.2, WHITE);
 
     }
 
     void Birds::Update() {
         position.x += speed;
+        position.y -= speed / 2;
     }
 
     Birds::~Birds() {

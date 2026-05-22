@@ -5,9 +5,12 @@
 #include "Birds.h"
 #include <vector>
 
+#include "raymath.h"
+
 int main() {
     const int screenWith = 1200;
     const int screenHeight = 800;
+     int playerLives = 2;
 
     InitWindow(screenWith, screenHeight, "Falling Delivery");
     SetTargetFPS(60);
@@ -19,7 +22,7 @@ int main() {
     while (!WindowShouldClose())
     {
         if (IsKeyPressed(KEY_S)) {
-            objects.push_back(new game::Objects("assets/hellportal.png"));
+            objects.push_back(new game::Objects("assets/rocket.png"));
         }
         if (IsKeyPressed(KEY_E)) {
             birds.push_back(new game::Birds("assets/bird.png"));
@@ -40,9 +43,13 @@ int main() {
             b->Draw();
         }
         auto it = objects.begin();
+        auto itBird = birds.begin();
         while (it != objects.end()) {
             game::Objects* o = *it;
-
+            float distance = Vector2Distance(player.GetPosition(), o->GetPosition());
+            if (distance < 30.0f && playerLives != ) {
+                playerLives--;
+            }
             if (o->GetPosition().y  < 0) {
                 delete o;
                 it =objects.erase(it);
