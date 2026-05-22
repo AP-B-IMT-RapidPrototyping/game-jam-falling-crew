@@ -9,7 +9,10 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 
 add_library(srclib
-        Held.cpp)
+        player.cpp
+        player.h
+        Objects.cpp
+        Objects.h)
 
 
 target_include_directories(srclib PUBLIC .)
