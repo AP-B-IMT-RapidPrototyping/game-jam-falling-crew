@@ -8,14 +8,14 @@
 namespace game {
     class Objects {
     private:
-        Texture2D image;
-        Vector2 position;
+         Texture2D image;
+         Vector2 position;
         int direction;
         int speed;
     public:
         Objects(const char* asset);
         void Draw();
-        void Update();
+         void Update();
         Vector2 GetPosition();
         ~Objects();
     };

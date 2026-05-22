@@ -12,7 +12,9 @@ add_library(srclib
         player.cpp
         player.h
         Objects.cpp
-        Objects.h)
+        Objects.h
+        Birds.cpp
+        Birds.h)
 
 
 target_include_directories(srclib PUBLIC .)
