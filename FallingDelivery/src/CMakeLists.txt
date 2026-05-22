@@ -14,7 +14,9 @@ add_library(srclib
         Objects.cpp
         Objects.h
         Birds.cpp
-        Birds.h)
+        Birds.h
+        Pakketje.cpp
+        Pakketje.h)
 
 
 target_include_directories(srclib PUBLIC .)

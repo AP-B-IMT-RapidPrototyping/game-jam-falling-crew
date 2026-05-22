@@ -19,7 +19,7 @@ namespace game {
     public:
         Objects(const char* asset);
         void Draw();
-         void Update();
+        void Update();
         Vector2 GetPosition();
         ~Objects();
     };
