@@ -2,7 +2,6 @@
 #include "raylib.h"
 #include "Objects.h"
 #include "Player.h"
-#include "Birds.h"
 #include <vector>
 
 #include "raymath.h"
@@ -16,7 +15,7 @@ int main() {
     SetTargetFPS(60);
 
     std::vector<game::Objects*> objects;
-    std::vector<game::Birds*> birds;
+
     game::Player player ("assets/Skydiver.png");
 
 
@@ -28,10 +27,7 @@ int main() {
 
         }
         if (IsKeyPressed(KEY_S)) {
-            objects.push_back(new game::Objects("assets/rocket.png"));
-        }
-        if (IsKeyPressed(KEY_E)) {
-            birds.push_back(new game::Birds("assets/bird.png"));
+            objects.push_back(new game::Objects());
         }
 
         player.Update();
@@ -44,18 +40,15 @@ int main() {
             o->Update();
             o->Draw();
         }
-        for (game::Birds* b: birds) {
-            b->Update();
-            b->Draw();
-        }
+
         auto it = objects.begin();
-        auto itBird = birds.begin();
+
         while (it != objects.end()) {
             game::Objects* o = *it;
 
             float distance = Vector2Distance(player.GetPosition(), o->GetPosition());
 
-            if (distance <= 50.0f && playerLives != 0) {
+            if (distance <= 80.0f && playerLives != 0) {
                 playerLives--;
                 delete o;
                 it = objects.erase(it);

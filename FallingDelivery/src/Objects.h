@@ -8,16 +8,13 @@
 namespace game {
     class Objects {
     private:
-        enum type {
-            bird = 0,
-            rocket = 1
-        };
+        int type;
          Texture2D image;
          Vector2 position;
         int direction;
         int speed;
     public:
-        Objects(const char* asset);
+        Objects();
         void Draw();
          void Update();
         Vector2 GetPosition();

@@ -7,11 +7,21 @@
 #include <iostream>
 
 namespace game {
-    Objects::Objects(const char* asset): image(LoadTexture(asset)),
-    speed(2),
-    direction (GetRandomValue(-1, 1)),
-    position({(float)GetRandomValue(0, 1200), 800}){
-        std::cout << direction;
+    Objects::Objects(): speed(2),
+    type(GetRandomValue(0, 1)),
+    direction (GetRandomValue(-1, 1))
+    {
+        switch (type) {
+            case 0:
+                image = LoadTexture("assets/rocket.png");
+                position = {(float)GetRandomValue(0, 1200), 800};
+                break;
+            case 1:
+                image = LoadTexture("assets/bird.png");
+                position = {0, (float)GetRandomValue(0, 800)};
+                break;
+
+        }
     }
 
     void Objects::Draw() {
@@ -24,11 +34,17 @@ namespace game {
     }
 
     void Objects::Update() {
-        position.x += speed * direction;
-        position.y -= speed;
+        if (type == 0) {
+            position.x += speed * direction;
+            position.y -= speed;
 
-        if (position.x + image.width >= 1200 || position.x -image.width <= 0) {
-            direction *= -1;
+            if (position.x + image.width >= 1200 || position.x -image.width <= 0) {
+                direction *= -1;
+            }
+        }
+        else if (type == 1) {
+            position.x += speed;
+            position.y -= speed / 2;
         }
     }
 
