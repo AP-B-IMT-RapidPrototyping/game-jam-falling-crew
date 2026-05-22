@@ -16,7 +16,7 @@ namespace game {
     public:
         Objects();
         void Draw();
-         void Update();
+        void Update();
         Vector2 GetPosition();
         ~Objects();
     };
