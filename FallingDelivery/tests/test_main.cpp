@@ -16,8 +16,16 @@ TEST_CASE("Object", "[Object][spawnposition][x]") {
             SECTION("Groterdan 0") {
                 REQUIRE(object.GetPosition().x>0);
             }
+            SECTION("kleinerdan 1200") {
+                REQUIRE(object.GetPosition().x<1200);
+            }
+        }
+        SECTION("Y") {
+            SECTION("Kleinerdan 0") {
+                REQUIRE(object.GetPosition().y > 0);
+            }
             SECTION("kleinerdan 800") {
-                REQUIRE(object.GetPosition().x<800);
+                REQUIRE(object.GetPosition().y<800);
             }
         }
     }
@@ -36,8 +44,16 @@ TEST_CASE("Player", "[Player][spawnposition][x]") {
             SECTION("Groterdan 0") {
                 REQUIRE(player.GetPosition().x>0);
             }
+            SECTION("kleinerdan 1200") {
+                REQUIRE(player.GetPosition().x<1200);
+            }
+        }
+        SECTION("Y") {
+            SECTION("Kleinerdan 0") {
+                REQUIRE(player.GetPosition().y > 0);
+            }
             SECTION("kleinerdan 800") {
-                REQUIRE(player.GetPosition().x<800);
+                REQUIRE(player.GetPosition().y<800);
             }
         }
     }
@@ -52,12 +68,12 @@ TEST_CASE("sanity check pakketje", "[Setup]") {
 TEST_CASE("Pakketje", "[Pakketje][spawnposition][x]") {
     game::Pakketje pakketje = game::Pakketje("assets/pakketje.png");
     SECTION("positie") {
-        SECTION("X") {
+        SECTION("Y") {
             SECTION("Groterdan 0") {
-                REQUIRE(pakketje.GetPosition().x>0);
+                REQUIRE(pakketje.GetPosition().y>0);
             }
             SECTION("kleinerdan 800") {
-                REQUIRE(pakketje.GetPosition().x<800);
+                REQUIRE(pakketje.GetPosition().y<800);
             }
         }
     }

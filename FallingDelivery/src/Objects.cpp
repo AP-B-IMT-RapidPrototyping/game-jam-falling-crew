@@ -22,7 +22,7 @@ namespace game {
                 std::cerr << "Fout opgetreden: " << e.what() << std::endl;
             }
 
-                position = {(float)GetRandomValue(0, 1150), 800};
+                position = {(float)GetRandomValue(10, 1150), 790};
                 collisionRange = 80.0f;
                 break;
             case 1:
@@ -34,7 +34,7 @@ namespace game {
             {
                 std::cerr << "Fout opgetreden: " << e.what() << std::endl;
             }
-                position = {0, (float)GetRandomValue(0, 800)};
+                position = {10, (float)GetRandomValue(10, 790)};
                 collisionRange = 60.0f;
                 break;
 

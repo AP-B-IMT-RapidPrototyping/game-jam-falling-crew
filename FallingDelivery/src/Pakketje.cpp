@@ -10,7 +10,7 @@ namespace game
     Pakketje::Pakketje(const char* asset): image(LoadTexture(asset)),
     speed(2),
     direction (GetRandomValue(-1, 1)),
-    position({(float)GetRandomValue(0, 1200), 800}){
+    position({(float)GetRandomValue(0, 1200), 750}){
         std::cout << direction;
     }
 
