@@ -27,9 +27,9 @@ int main() {
     game::Player player ("assets/Skydiver.png");
 
 
-    while (!WindowShouldClose()  && timer != 0 )
+    while (!WindowShouldClose())
     {
-        if (playerLives != 0) {
+        if (playerLives != 0 && timer != 0) {
             counter = timer / 60;
 
             if (timerObject >= 60) {
@@ -100,16 +100,25 @@ int main() {
                     it2 = pakket.erase(it2);
                     score++;
                 }
+                else if (p->GetPosition().y  < 0) {
+                    delete p;
+                    it =objects.erase(it);
+                    std::cout << "object removed";
+                }
                 else {
                     ++it2;
                 }
             }
-            /*if (playerLives <= 0) {
-                player.~Player();
-
-            }*/
             EndDrawing();
             timer--;
+        }
+        else if (timer == 0 && score <= 4)
+        {
+            BeginDrawing();
+            ClearBackground(BLUE);
+            DrawText("DELIVERY COMEPLETE", 0, GetScreenHeight() / 2.5, 100, GREEN);
+            DrawText(std::to_string(score).c_str(), GetScreenWidth() / 2, GetScreenHeight() / 2, 60, WHITE);
+            EndDrawing();
         }
         else {
             BeginDrawing();

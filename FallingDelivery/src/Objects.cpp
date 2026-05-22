@@ -12,13 +12,28 @@ namespace game {
     direction (GetRandomValue(-1, 1))
     {
         switch (type) {
-            case 0:
+        case 0:
+            try
+            {
                 image = LoadTexture("assets/rocket.png");
-                position = {(float)GetRandomValue(0, 1200), 800};
+            }
+            catch (const std::runtime_error& e)
+            {
+                std::cerr << "Fout opgetreden: " << e.what() << std::endl;
+            }
+
+                position = {(float)GetRandomValue(0, 1150), 800};
                 collisionRange = 80.0f;
                 break;
             case 1:
+            try
+            {
                 image = LoadTexture("assets/bird.png");
+            }
+            catch (const std::runtime_error& e)
+            {
+                std::cerr << "Fout opgetreden: " << e.what() << std::endl;
+            }
                 position = {0, (float)GetRandomValue(0, 800)};
                 collisionRange = 60.0f;
                 break;
