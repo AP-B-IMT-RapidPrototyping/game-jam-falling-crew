@@ -9,6 +9,7 @@ namespace game {
     Objects::Objects(const char* asset): speed(1) {
         image = LoadTexture(asset);
         position = {(float)image.width, 800};
+        direction = GetRandomValue(-1,2);
     }
 
     void Objects::Draw() {
@@ -20,7 +21,8 @@ namespace game {
     }
 
     void Objects::Update() {
-
+        position.x += speed * direction;
+        position.y -= speed;
     }
 
     Objects::~Objects() {
