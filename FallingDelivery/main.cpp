@@ -5,6 +5,7 @@
 #include "Birds.h"
 #include <vector>
 
+#include "Pakketje.h"
 #include "raymath.h"
 
 int main() {
@@ -17,6 +18,7 @@ int main() {
 
     std::vector<game::Objects*> objects;
     std::vector<game::Birds*> birds;
+    std::vector<game::Pakketje*> pakket;
     game::Player player ("assets/Skydiver.png");
 
 
@@ -33,6 +35,9 @@ int main() {
         if (IsKeyPressed(KEY_E)) {
             birds.push_back(new game::Birds("assets/bird.png"));
         }
+        if (IsKeyPressed(KEY_SPACE)) {
+            pakket.push_back(new game::Pakketje("assets/pakketje.png"));
+        }
 
         player.Update();
         BeginDrawing();
@@ -47,6 +52,10 @@ int main() {
         for (game::Birds* b: birds) {
             b->Update();
             b->Draw();
+        }
+        for (game::Pakketje* p: pakket) {
+            p->Update();
+            p->Draw();
         }
         auto it = objects.begin();
         auto itBird = birds.begin();
