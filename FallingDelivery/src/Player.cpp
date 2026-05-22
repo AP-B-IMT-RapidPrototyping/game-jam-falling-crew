@@ -24,10 +24,11 @@ namespace game
     {
         float dt = GetFrameTime();
 
-        if (IsKeyDown(KEY_RIGHT)) position.x += speed * dt;
-        if (IsKeyDown(KEY_LEFT))  position.x -= speed * dt;
-        if (IsKeyDown(KEY_DOWN))  position.y += speed * dt;
-        if (IsKeyDown(KEY_UP))    position.y -= speed * dt;
+        if (IsKeyDown(KEY_RIGHT) && position.x <= 1000) position.x += speed * dt;
+        if (IsKeyDown(KEY_LEFT) && position.x >= 0)  position.x -= speed * dt;
+        if (IsKeyDown(KEY_DOWN) && position.y <=  650)  position.y += speed * dt;
+        if (IsKeyDown(KEY_UP) && position.y >= 0)    position.y -= speed * dt;
+
     }
 
     void Player::Draw()
