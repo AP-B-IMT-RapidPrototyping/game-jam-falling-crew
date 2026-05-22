@@ -29,13 +29,13 @@ uitdagingen:
   - Je moet de objecten ontwijken anders verlies je een leven.
   - Je manoeuvreert tussen de objecten voor een pakketjes op te pakken.
 Doelen:
-  - 4 pakketjes oppakken.
+  - minstens 4 pakketjes oppakken.
   - In leven blijven.
   - Voor de tijd klaar zijn.
 
 ### Mechanics
 - 2 levens: Als je geraakt wordt door een object(een vogel/ een raket) dan gaat er een leven af.
-- 4 pakketjes: Je moet binnen de tijd 4 pakketjes oppakken anders ben je verloren.
+- 4 pakketjes: Je moet binnen de tijd minstens 4 pakketjes oppakken anders ben je verloren.
 - 1 Minuut de tijd.
 - Skydiving: Je valt uit het vliegtuig en blijft vallen.
 - Je krijgt punten terwijl je pakketjes oppakt.
