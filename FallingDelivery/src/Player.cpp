@@ -34,4 +34,8 @@ namespace game
     {
      DrawTextureEx(image, position, 0,0.2, WHITE);
     }
+
+    Vector2 Player::GetPosition() {
+        return position;
+    }
 } // Game

@@ -8,6 +8,10 @@
 namespace game {
     class Objects {
     private:
+        enum type {
+            bird = 0,
+            rocket = 1
+        };
          Texture2D image;
          Vector2 position;
         int direction;

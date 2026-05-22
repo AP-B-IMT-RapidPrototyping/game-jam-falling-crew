@@ -19,8 +19,14 @@ int main() {
     std::vector<game::Birds*> birds;
     game::Player player ("assets/Skydiver.png");
 
-    while (!WindowShouldClose())
+
+    while (!WindowShouldClose() && playerLives != 0)
     {
+        if (playerLives <= 0) {
+            player.~Player();
+            delete &player;
+
+        }
         if (IsKeyPressed(KEY_S)) {
             objects.push_back(new game::Objects("assets/rocket.png"));
         }
@@ -46,11 +52,15 @@ int main() {
         auto itBird = birds.begin();
         while (it != objects.end()) {
             game::Objects* o = *it;
+
             float distance = Vector2Distance(player.GetPosition(), o->GetPosition());
-            if (distance < 30.0f && playerLives != ) {
+
+            if (distance <= 50.0f && playerLives != 0) {
                 playerLives--;
+                delete o;
+                it = objects.erase(it);
             }
-            if (o->GetPosition().y  < 0) {
+            else if (o->GetPosition().y  < 0) {
                 delete o;
                 it =objects.erase(it);
                 std::cout << "object removed";
@@ -60,6 +70,7 @@ int main() {
             }
         }
         EndDrawing();
+
     }
     CloseWindow();
     return 0;
