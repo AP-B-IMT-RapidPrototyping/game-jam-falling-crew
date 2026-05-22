@@ -8,7 +8,7 @@
 namespace game {
     class Objects {
     private:
-        static Texture2D image;
+        Texture2D image;
         Vector2 position;
         int direction;
         int speed;

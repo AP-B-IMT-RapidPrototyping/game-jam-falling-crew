@@ -4,16 +4,19 @@
 
 #include "Objects.h"
 #include "raylib.h"
+#include <iostream>
 
 namespace game {
-    Objects::Objects(const char* asset): speed(1) {
-        image = LoadTexture(asset);
-        position = {(float)image.width, 800};
-        direction = GetRandomValue(-1,2);
+    Objects::Objects(const char* asset): image(LoadTexture(asset)),
+    speed(1),
+    direction (GetRandomValue(-1, 1)),
+    position({(float)GetRandomValue(image.width, 1200 - image.width), 800}){
+        std::cout << direction;
     }
 
     void Objects::Draw() {
-        DrawTexture(image, position.x, position.y, WHITE);
+        //DrawTexture(image, position.x, position.y, WHITE);
+        DrawCircle(position.x, position.y, 50, WHITE);
     }
 
     Vector2 Objects::GetPosition() {
@@ -23,6 +26,10 @@ namespace game {
     void Objects::Update() {
         position.x += speed * direction;
         position.y -= speed;
+
+        if (position.x + image.width >= 1200 || position.x -image.width <= 0) {
+            direction *= -1;
+        }
     }
 
     Objects::~Objects() {
