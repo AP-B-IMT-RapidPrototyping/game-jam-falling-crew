@@ -4,13 +4,13 @@
 ## Naam
 Falling Delivery
 ## Summary
-Je start vanuit een vliegtuig, de pakketjes heb je er juist eruit gegooid. Vervolgens spring je uit het vliegtuig en je probeert pakketje per pakketje op te pakken. Je moet wel voorzichtig zijn want er zijn veel voorwerpen in de lucht die je kunnen raken. Je hebt 2 levens dus weer voorzichtig. Er komen steeds meer en meer objecten per pakketje dat je opraapt. Je moet alle 4 de pakketjes oppakken voordat je op de grond bent anders ben je verloren.
+Je start vanuit een vliegtuig, de pakketjes heb je er juist eruit gegooid. Vervolgens spring je uit het vliegtuig en je probeert pakketje per pakketje op te pakken. Je moet wel voorzichtig zijn want er zijn veel voorwerpen in de lucht die je kunnen raken. Je hebt 2 levens dus weer voorzichtig. Er komen steeds meer en meer objecten per pakketje dat je opraapt. Je moet minstens 4 pakketjes oppakken voordat je op de grond bent anders ben je verloren.
 
 ## Genre
 Skydiver game
 
 ## Concept Pitch
-Je kent het allemaal wel, je pakketje dat vertraging heeft. Daarom heeft onze leveransier beslist om de pakketjes aan huis te laten leveren via skydiving. Jij gooit de pakjes uit het vliegtuig en probeert ze nadien te vangen voordat ze op de grond vallen maar pas op er zijn objecten in de lucht die jij moet ontwijken. 
+Je kent het allemaal wel, je pakketje dat vertraging heeft. Daarom heeft onze leveransier beslist om de pakketjes aan huis te laten leveren via skydiving. Jij gooit de pakjes uit het vliegtuig en probeert ze nadien te vangen voordat ze op de grond vallen maar pas op er zijn objecten in de lucht die jij moet ontwijken. Vang minstens 4 pakketjes zonder dood te gaan om je baan te behouden! 
 
 ## Gameplay Mechanics
 -Skydiving
@@ -19,10 +19,10 @@ Je kent het allemaal wel, je pakketje dat vertraging heeft. Daarom heeft onze le
 -60 seconde tijd
 
 ### Game Flow
-Je blijft de objecten ontwijken om zo geen levens te verliezen.
+Je begint in jouw bbost vliegtuig waar je de pakketjes uitgooid. Nadien dat jij ook springt zit je in de open lucht.Je blijft de objecten ontwijken om zo geen levens te verliezen.
 
 ### Game Feel
-
+Jij springt uit het vliegtuig honderde meters van de grond. Jij kijkt goed rond en jij ziet jouw pakketjes die jij moet opvangen. Jouw omgeving is open en vrij totdat de vogels en raketten het saboteren. 
 
 ### Gameplay
 uitdagingen:
@@ -39,4 +39,3 @@ Doelen:
 - 1 Minuut de tijd.
 - Skydiving: Je valt uit het vliegtuig en blijft vallen.
 - Je krijgt punten terwijl je pakketjes oppakt.
-Impliciete/expliciete spelregels, physics/actions/economy/etc.
