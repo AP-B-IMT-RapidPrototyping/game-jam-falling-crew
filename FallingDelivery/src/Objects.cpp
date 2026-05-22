@@ -15,8 +15,8 @@ namespace game {
     }
 
     void Objects::Draw() {
-        //DrawTexture(image, position.x, position.y, WHITE);
-        DrawCircle(position.x, position.y, 50, WHITE);
+        DrawTexture(image, position.x, position.y, WHITE);
+
     }
 
     Vector2 Objects::GetPosition() {

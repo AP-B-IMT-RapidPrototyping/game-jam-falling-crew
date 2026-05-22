@@ -2,6 +2,7 @@
 #include "raylib.h"
 #include "Objects.h"
 #include "Player.h"
+#include "Birds.h"
 #include <vector>
 
 int main() {
@@ -12,12 +13,16 @@ int main() {
     SetTargetFPS(60);
 
     std::vector<game::Objects*> objects;
+    std::vector<game::Birds*> birds;
     game::Player player ("assets/Skydiver.png");
 
     while (!WindowShouldClose())
     {
         if (IsKeyPressed(KEY_S)) {
             objects.push_back(new game::Objects("assets/hellportal.png"));
+        }
+        if (IsKeyPressed(KEY_E)) {
+            birds.push_back(new game::Birds("assets/bird.png"));
         }
 
         player.Update();
@@ -29,6 +34,10 @@ int main() {
         for (game::Objects* o: objects) {
             o->Update();
             o->Draw();
+        }
+        for (game::Birds* b: birds) {
+            b->Update();
+            b->Draw();
         }
         auto it = objects.begin();
         while (it != objects.end()) {
