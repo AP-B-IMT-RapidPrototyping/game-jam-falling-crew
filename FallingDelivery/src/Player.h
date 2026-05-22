@@ -5,7 +5,7 @@
 #ifndef FALLINGDELIVERY_PLAYER_H
 #define FALLINGDELIVERY_PLAYER_H
 
-namespace Game {
+namespace game {
     class Player {
     };
 } // Game
