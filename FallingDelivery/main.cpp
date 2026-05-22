@@ -8,7 +8,6 @@ int main() {
     const int screenWith = 1200;
     const int screenHeight = 800;
     std::vector<game::Objects*> objects;
-    auto object = new game::Objects("FallingDelivery/assets/hellportal.png");
     InitWindow(screenWith, screenHeight, "Falling Delivery");
     SetTargetFPS(60);
 
