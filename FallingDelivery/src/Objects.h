@@ -14,6 +14,7 @@ namespace game {
         int direction;
         int speed;
     public:
+        float collisionRange;
         Objects();
         void Draw();
         void Update();

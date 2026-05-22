@@ -15,17 +15,24 @@ namespace game {
             case 0:
                 image = LoadTexture("assets/rocket.png");
                 position = {(float)GetRandomValue(0, 1200), 800};
+                collisionRange = 80.0f;
                 break;
             case 1:
                 image = LoadTexture("assets/bird.png");
                 position = {0, (float)GetRandomValue(0, 800)};
+                collisionRange = 60.0f;
                 break;
 
         }
     }
 
     void Objects::Draw() {
-        DrawTextureEx(image, position, 0, 0.2, WHITE);
+        if (type == 0) {
+            DrawTextureEx(image, position, 0, 0.2, WHITE);
+        }
+        else if (type == 1) {
+            DrawTextureEx(image, position, 0, 0.15, WHITE);
+        }
 
     }
 

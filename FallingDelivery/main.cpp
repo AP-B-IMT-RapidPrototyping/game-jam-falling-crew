@@ -73,7 +73,7 @@ int main() {
 
                 float distance = Vector2Distance(player.GetPosition(), o->GetPosition());
 
-                if (distance <= 80.0f && playerLives != 0) {
+                if (distance <= o->collisionRange && playerLives != 0) {
                     playerLives--;
                     delete o;
                     it = objects.erase(it);
