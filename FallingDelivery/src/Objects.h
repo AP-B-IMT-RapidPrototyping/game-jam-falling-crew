@@ -4,9 +4,20 @@
 
 #ifndef FALLINGDELIVERY_OBJECTS_H
 #define FALLINGDELIVERY_OBJECTS_H
-
+#include "raylib.h"
 namespace game {
     class Objects {
+    private:
+        static Texture2D image;
+        Vector2 position;
+        int direction;
+        int speed;
+    public:
+        Objects(const char* asset);
+        void Draw();
+        void Update();
+        Vector2 GetPosition();
+        ~Objects();
     };
 } // game
 
