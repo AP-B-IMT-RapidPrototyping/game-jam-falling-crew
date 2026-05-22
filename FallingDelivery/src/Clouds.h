@@ -2,13 +2,12 @@
 // Created by leonv on 22/05/2026.
 //
 
-#ifndef FALLINGDELIVERY_PAKKETJE_H
-#define FALLINGDELIVERY_PAKKETJE_H
+#ifndef FALLINGDELIVERY_CLOUDS_H
+#define FALLINGDELIVERY_CLOUDS_H
 #include "raylib.h"
-
 namespace game
 {
-    class Pakketje
+    class Clouds
     {
     private:
         Texture2D image;
@@ -16,12 +15,14 @@ namespace game
         int direction;
         int speed;
     public:
-        Pakketje(const char* asset);
+        Clouds(const char* asset);
         void Draw();
         void Update();
-        Vector2 GetPosition();
-        ~Pakketje();
+        ~Clouds();
     };
-} // game
+}
 
-#endif //FALLINGDELIVERY_PAKKETJE_H
+
+
+
+#endif //FALLINGDELIVERY_CLOUDS_H

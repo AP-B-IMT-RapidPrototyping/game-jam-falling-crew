@@ -14,7 +14,9 @@ add_library(srclib
         Objects.cpp
         Objects.h
         Pakketje.cpp
-        Pakketje.h)
+        Pakketje.h
+        Clouds.cpp
+        Clouds.h)
 
 
 
