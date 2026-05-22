@@ -7,17 +7,25 @@
 int main() {
     const int screenWith = 1200;
     const int screenHeight = 800;
-    std::vector<game::Objects*> objects;
+
     InitWindow(screenWith, screenHeight, "Falling Delivery");
     SetTargetFPS(60);
+
+    std::vector<game::Objects*> objects;
+    game::Player player ("assets/Skydiver.png");
 
     while (!WindowShouldClose())
     {
         if (IsKeyPressed(KEY_S)) {
-            objects.push_back(new game::Objects("FallingDelivery/assets/hellportal.png"));
+            objects.push_back(new game::Objects("assets/hellportal.png"));
         }
+
+        player.Update();
         BeginDrawing();
         ClearBackground(SKYBLUE);
+
+        player.Draw();
+
         for (game::Objects* o: objects) {
             o->Update();
             o->Draw();
@@ -37,7 +45,6 @@ int main() {
         }
         EndDrawing();
     }
-
     CloseWindow();
     return 0;
 }

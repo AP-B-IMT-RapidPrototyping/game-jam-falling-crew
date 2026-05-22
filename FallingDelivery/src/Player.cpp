@@ -9,8 +9,8 @@ namespace game
 {
     Player::Player(const std::string& imagePath)
         :image {LoadTexture(imagePath.c_str())}
-        ,position{500.0f, 0.0f}
-        ,speed{100.0f}
+        ,position{500.0f, 100.0f}
+        ,speed{300.0f}
     {
         std::cout << "Player aangemaakt\n";
     }
@@ -28,5 +28,10 @@ namespace game
         if (IsKeyDown(KEY_LEFT))  position.x -= speed * dt;
         if (IsKeyDown(KEY_DOWN))  position.y += speed * dt;
         if (IsKeyDown(KEY_UP))    position.y -= speed * dt;
+    }
+
+    void Player::Draw()
+    {
+     DrawTextureEx(image, position, 0,0.2, WHITE);
     }
 } // Game
