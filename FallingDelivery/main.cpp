@@ -5,7 +5,6 @@
 #include "Player.h"
 #include <vector>
 
-#include "Clouds.h"
 #include "Pakketje.h"
 #include "raymath.h"
 
@@ -25,9 +24,7 @@ int main() {
 
     std::vector<game::Objects*> objects;
     std::vector<game::Pakketje*> pakket;
-    std::vector<game::Clouds*> cloud;
     game::Player player ("assets/Skydiver.png");
-
 
     while (!WindowShouldClose())
     {
@@ -53,13 +50,12 @@ int main() {
             player.Update();
             BeginDrawing();
             ClearBackground(SKYBLUE);
+            DrawTextureEx(LoadTexture("assets/Wolken.png"), {200, 0},0, 3, WHITE);
 
             player.Draw();
             
-            for (game::Clouds* c: cloud) {
-                c->Update();
-                c->Draw();
-            }
+
+
             for (game::Objects* o: objects) {
                 o->Update();
                 o->Draw();
